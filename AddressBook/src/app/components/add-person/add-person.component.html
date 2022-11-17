@@ -1,0 +1,72 @@
+<div class="form-content">
+    <form class="form" #contactForm="ngForm" novalidate>
+        <div class="form-head-content">
+            Person Address Form
+            <div class="form-logo-content">
+                <mat-icon class="cancel-icon" routerLink="">cancel</mat-icon>
+            </div>
+        </div>
+
+        <!-- <full name> -->
+        <div class="row-content">
+            <mat-label class="label text" for="firstName">First Name</mat-label>
+            <input class="input" [(ngModel)]="addPerson.firstName" type="text" name="firstName" placeholder="">
+        </div>
+        <div class="row-content">
+            <mat-label class="label text" for="fullName">Last Name</mat-label>
+            <input class="input" type="text" [(ngModel)]="addPerson.lastName" name="lastName" placeholder="">
+        </div>
+
+        <!-- <phone number> -->
+        <div class="row-content">
+            <mat-label class="label text" for="phone">Phone Number</mat-label>
+            <input class="input" type="text" [(ngModel)]="addPerson.phoneNo" name="phone" placeholder="">
+        </div>
+        <!-- Email -->
+        <div class="row-content">
+            <mat-label class="label text" for="email">Email</mat-label>
+            <input class="input" type="text" name="email" [(ngModel)]="addPerson.email" placeholder="xyz@email.com">
+        </div>
+        <!-- <address> -->
+        <div class="row-content">
+            <mat-label class="label text" for="address">Address</mat-label>
+            <textarea class="input address" name="Address" [(ngModel)]="addPerson.address" required
+                placeholder=""></textarea>
+        </div>
+
+        <!-- <city, state, zip code> -->
+        <div class="row-content-exp">
+
+            <!-- <city> -->
+            <div class="oneRow-content">
+                <mat-label class="label text" for="city">City</mat-label>
+                <select class="select-input" [(ngModel)]="addPerson.city" name="city" required>
+
+                    <option *ngFor="let city of cityList" [value]="city.value">{{city.value}}</option>
+                </select>
+            </div>
+
+            <!-- <state> -->
+            <div class="oneRow-content">
+                <mat-label class="label text" for="state">State</mat-label>
+                <select class="select-input" [(ngModel)]="addPerson.state" name="state" required>
+                    <option disabled>Select State</option>
+                    <option *ngFor="let state of stateList" [value]="state.value">{{state.value}}</option>
+                </select>
+            </div>
+
+            <!-- <zip code> -->
+            <div class="oneRow-content">
+                <mat-label class="label text" for="zipCode">Zip Code</mat-label>
+                <input class="zipCode" type="text" [(ngModel)]="addPerson.pin" name="zipCode" required minlength="6"
+                    maxlength="6">
+            </div>
+        </div>
+
+        <!-- <add button and reset button> -->
+        <div class="submit-reset">
+            <button type="submit" (click)="onSubmit()" class="button" mat-raised-button>Add</button>
+            <button type="reset" class="resetButton button">Reset</button>
+        </div>
+    </form>
+</div>

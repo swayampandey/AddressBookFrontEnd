@@ -1,0 +1,48 @@
+.header-bg {
+    padding: 15px 0;
+    background-color: #ffffff;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 0px solid blue;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid blue;
+    width: 80%;
+    top: 51px;
+    left: 204px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.logo-img {
+    padding-right: 5px;
+}
+
+.address-label {
+    font: normal normal bold 20px/25px Montserrat;
+    letter-spacing: 0px;
+    color: #008CFF;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.book {
+    color: #42515f;
+}
+
+* {
+    box-sizing: border-box;
+}
